@@ -1,0 +1,1511 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: #f5f5f5;
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+}
+
+.noti {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.noti .notification {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 30px;
+  border-radius: 50%;
+  background: #00897b;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn {
+  padding: 8px 35px;
+  margin: 2.5px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: steelblue;
+  -webkit-transition: all .75 ease-in-out;
+  transition: all .75 ease-in-out;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #38678f;
+}
+
+.header-nav {
+  height: 75px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-color: #00897b;
+  color: white;
+  padding: 0 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 13px;
+}
+
+.header-nav .logo-container {
+  margin-left: 10px;
+}
+
+.header-nav .logo-container img {
+  display: block;
+  height: 30px;
+}
+
+.header-nav .open-menu-container {
+  width: 35px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-nav .open-menu-container .open-menu-btn {
+  background: #fff;
+  height: 5px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.header-nav .open-menu-container .open-menu-btn::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.header-nav .open-menu-container .open-menu-btn::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  display: none;
+}
+
+.main-navigation {
+  height: 100vh;
+  width: 90%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  border-radius: 10px;
+  padding: 25px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@media (min-width: 600px) {
+  .main-navigation {
+    max-width: 500px;
+  }
+}
+
+.main-navigation .main-nav-header {
+  height: auto;
+  padding-bottom: 10px;
+  border-bottom: 2px solid grey;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-navigation .main-nav-header .close-menu-btn-container {
+  cursor: pointer;
+}
+
+.main-navigation .patient-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+  border-bottom: 1px solid #c5c5c5;
+  height: 80px;
+}
+
+.main-navigation .patient-details img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.main-navigation .patient-details h3 {
+  display: inline-block;
+  width: 100%;
+}
+
+.main-navigation .dashboard-menu {
+  display: block;
+  margin: 10px 0;
+}
+
+.main-navigation .dashboard-menu h4 {
+  color: #c5c5c5;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.main-navigation .dashboard-menu .acordian-menu {
+  list-style: none;
+  text-transform: uppercase;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item {
+  border-top: 1px solid #00897b;
+  overflow: hidden;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item .dropdown-btn {
+  display: block;
+  padding: 16px 20px;
+  background: #00897b;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item .dropdown-btn::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #00897b;
+  left: 20px;
+  bottom: -7px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item .dropdown-btn i {
+  margin-right: 10px;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item .acordian-drop {
+  overflow: hidden;
+  background: #c5c5c5;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  max-height: 0;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item .acordian-drop a {
+  text-decoration: none;
+  display: block;
+  padding: 16px 26px;
+  color: #fff;
+  font-size: 14px;
+  margin: 4px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item .acordian-drop a::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #000;
+  top: 0;
+  left: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item .acordian-drop a:hover::before {
+  opacity: 1;
+}
+
+.main-navigation .dashboard-menu .acordian-menu .item:target .acordian-drop {
+  max-height: 10em;
+}
+
+.content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 98%;
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  .content-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 20px 1fr;
+        grid-template-columns: 2fr 20px 1fr;
+        grid-template-areas: "calendar . tasks";
+  }
+}
+
+@media (min-width: 900px) {
+  .content-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 20px 1fr;
+        grid-template-columns: 3fr 20px 1fr;
+        grid-template-areas: "calendar . tasks";
+  }
+}
+
+.content-container .calendar {
+  background: #fff;
+  padding: 20px;
+  background: #fff;
+  font-weight: 300;
+  border-radius: 5px;
+  grid-area: calendar;
+  margin-bottom: 25px;
+}
+
+.content-container .calendar .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.content-container .calendar .days .calendar-header {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+  vertical-align: middle;
+}
+
+.content-container .calendar .days .table {
+  padding: 0;
+  width: 100%;
+}
+
+.content-container .calendar .days .table .table-head {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #00897b;
+  color: #fff;
+}
+
+.content-container .calendar .days .table .table-head th {
+  width: 15%;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 500px) {
+  .content-container .calendar .days .table .table-head th {
+    width: 45px;
+  }
+}
+
+@media (min-width: 600px) {
+  .content-container .calendar .days .table .table-head th {
+    width: 150px;
+  }
+}
+
+.content-container .calendar .days .table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+}
+
+@media (min-width: 600px) {
+  .content-container .calendar .days .table tr {
+    height: 100px;
+  }
+}
+
+.content-container .calendar .days .table tr td {
+  text-align: center;
+  font-size: 10px;
+  display: inline-block;
+  border: 1px solid #c5c5c5;
+  text-align: left;
+  display: inline-block;
+  width: 15%;
+  height: 60px;
+  border-bottom: 1px solid #c5c5c5;
+  font-size: 8px;
+}
+
+@media (min-width: 500px) {
+  .content-container .calendar .days .table tr td {
+    width: 45px;
+  }
+}
+
+@media (min-width: 600px) {
+  .content-container .calendar .days .table tr td {
+    width: 15%;
+    height: 100px;
+    font-size: 15px;
+  }
+}
+
+.content-container .calendar .days .table tr td.pending {
+  background: silver;
+}
+
+.content-container .calendar .days .table tr td.appointment {
+  background: #00897b;
+}
+
+.content-container .calendar .days .table tr td.checkup {
+  background: #ec3f7a;
+}
+
+.content-container .calendar .days .table tr td.next-month {
+  background: #868686;
+}
+
+.content-container .calendar .all-patients {
+  width: 100%;
+  display: none;
+  text-align: center;
+}
+
+.content-container .calendar .all-patients .patients-details {
+  width: 100%;
+  list-style: none;
+}
+
+.content-container .calendar .all-patients .patients-details .patient-stuff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0;
+}
+
+.content-container .calendar .all-doctors {
+  width: 100%;
+  display: none;
+  text-align: center;
+}
+
+.content-container .calendar .all-doctors .doctors-details {
+  width: 100%;
+  list-style: none;
+}
+
+.content-container .calendar .all-doctors .doctors-details .doctor-stuff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0;
+}
+
+.content-container .calendar .doctors-info {
+  display: none;
+}
+
+.content-container .calendar .doctors-info .header {
+  text-align: center;
+  color: #333;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.content-container .calendar .doctors-info .header-and-image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.content-container .calendar .doctors-info .header-and-image-container .header-text h4 {
+  font-size: 20px;
+  padding-bottom: 2.5px;
+  border-bottom: 1.5px solid #00897b;
+}
+
+.content-container .calendar .doctors-info .header-and-image-container .header-image {
+  overflow: hidden;
+}
+
+.content-container .calendar .doctors-info .header-and-image-container .header-image img {
+  height: 100px;
+}
+
+.content-container .calendar .doctors-info .doctor-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.content-container .calendar .doctors-info .doctor-details .key {
+  width: 50%;
+}
+
+@media (min-width: 600px) {
+  .content-container .calendar .doctors-info .doctor-details .key {
+    width: 30%;
+  }
+}
+
+.content-container .calendar .doctors-info .doctor-details .key h4 {
+  font-size: 18px;
+}
+
+.content-container .calendar .doctors-info .doctor-details .value {
+  width: 50%;
+}
+
+.content-container .calendar .doctors-info .doctor-details .value h4 {
+  font-size: 16px;
+}
+
+.content-container .calendar .doctors-info .doctor-details .value input {
+  display: none;
+}
+
+.content-container .calendar .doctors-info .profile-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.content-container .calendar .doctors-info .profile-options .save-btn-container {
+  display: none;
+}
+
+.content-container .calendar .doctors-info h4 {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.content-container .calendar .doctors-info h4 span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content-container .calendar .patient-info {
+  display: none;
+}
+
+.content-container .calendar .patient-info .header {
+  text-align: center;
+  color: #333;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.content-container .calendar .patient-info .header-text-and-image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.content-container .calendar .patient-info .header-text-and-image-container .header-text h4 {
+  font-size: 20px;
+  border-bottom: 1.5px solid #00897b;
+}
+
+@media (min-width: 600px) {
+  .content-container .calendar .patient-info .header-text-and-image-container .header-text h4 {
+    font-size: 25px;
+  }
+}
+
+.content-container .calendar .patient-info .header-text-and-image-container .image-container img {
+  width: 100px;
+  height: 100px;
+}
+
+@media (min-width: 600px) {
+  .content-container .calendar .patient-info .header-text-and-image-container .image-container img {
+    max-width: 250px;
+  }
+}
+
+.content-container .calendar .patient-info .patient-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.content-container .calendar .patient-info .patient-details .left {
+  width: 50%;
+}
+
+.content-container .calendar .patient-info .patient-details .left h5 {
+  font-size: 18px;
+}
+
+.content-container .calendar .patient-info .patient-details .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-container .calendar .patient-info .patient-details .right input {
+  display: none;
+}
+
+.content-container .calendar .patient-info h4 {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.content-container .calendar .patient-info h4 span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content-container .calendar .profile-options {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content-container .calendar .doctor-registration {
+  display: none;
+}
+
+.content-container .calendar .doctor-registration .row1, .content-container .calendar .doctor-registration .row2, .content-container .calendar .doctor-registration .row3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content-container .calendar .doctor-registration .row1 input, .content-container .calendar .doctor-registration .row2 input, .content-container .calendar .doctor-registration .row3 input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.content-container .daily-duties {
+  background: #fff;
+  font-weight: 300;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  padding: 0 20px;
+  height: auto;
+  grid-area: tasks;
+}
+
+@media (min-width: 900px) {
+  .content-container .daily-duties {
+    padding: 20px;
+  }
+}
+
+.content-container .daily-duties h5 {
+  color: #c5c5c5;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #c5c5c5;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 900px) {
+  .content-container .daily-duties h5 {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+.content-container .daily-duties .duties-input-container {
+  width: 100%;
+  text-align: right;
+}
+
+.content-container .daily-duties .duties-input-container input {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #c5c5c5;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.content-container .daily-duties .duties-input-container .buttons-container button {
+  margin-bottom: 25px;
+}
+
+.content-container .daily-duties .duties-input-container .buttons-container button:hover {
+  background: #38678f;
+}
+
+.content-container .daily-duties .duties-input-container .buttons-container .save-edited-task {
+  display: none;
+}
+
+.content-container .daily-duties .added-tasks {
+  padding-bottom: 30px;
+}
+
+.content-container .daily-duties .added-tasks h3 {
+  display: none;
+  color: #c5c5c5;
+  font-size: 15px;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #c5c5c5;
+  margin-bottom: 10px;
+}
+
+.content-container .daily-duties .added-tasks .tasks {
+  list-style: none;
+}
+
+.content-container .daily-duties .added-tasks .tasks li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid #8d8d8d;
+}
+
+@media (min-width: 600px) {
+  .content-container .daily-duties .added-tasks .tasks li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.content-container .daily-duties .added-tasks .tasks li h6 {
+  font-size: 18px;
+}
+
+.content-container .daily-duties .added-tasks .tasks li .task-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.view-available-doctors-lightbox {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.view-available-doctors-lightbox .lightbox-navigation {
+  width: 100%;
+  border-radius: 10px;
+  height: 95vh;
+  margin: auto;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .view-available-doctors-lightbox .lightbox-navigation {
+    width: 60%;
+    height: 55vh;
+  }
+}
+
+.view-available-doctors-lightbox .lightbox-navigation .lightbox-nav {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.view-available-doctors-lightbox .lightbox-navigation .lightbox-nav .close-checkup-lightbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.view-available-doctors-lightbox .lightbox-navigation h3 {
+  color: #c5c5c5;
+  font-size: 15px;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #c5c5c5;
+  margin-bottom: 10px;
+}
+
+.view-available-doctors-lightbox .lightbox-navigation li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #8d8d8d;
+}
+
+@media (min-width: 600px) {
+  .view-available-doctors-lightbox .lightbox-navigation li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.view-available-doctors-lightbox .lightbox-navigation li h6 {
+  font-size: 18px;
+}
+
+.view-available-doctors-lightbox .lightbox-navigation li .task-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.view-individual-appointment-lightbox {
+  height: 100vh;
+  width: 100%;
+  background-color: #00897b83;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.view-individual-appointment-lightbox .lightbox-navigation {
+  width: 75%;
+  border-radius: 10px;
+  height: 40vh;
+  margin: auto;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .view-individual-appointment-lightbox .lightbox-navigation {
+    width: 30%;
+  }
+}
+
+.view-individual-appointment-lightbox .lightbox-navigation .lightbox-nav {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.view-individual-appointment-lightbox .lightbox-navigation .lightbox-nav .close-individual-appointment-lightbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.view-individual-appointment-lightbox .lightbox-navigation ul {
+  list-style: none;
+}
+
+.view-individual-appointment-lightbox .lightbox-navigation ul li {
+  margin-bottom: 10px;
+}
+
+.view-appointment-lightbox {
+  height: 100vh;
+  width: 100%;
+  background-color: #00897b83;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.view-appointment-lightbox .lightbox-navigation {
+  width: 75%;
+  border-radius: 10px;
+  height: 40vh;
+  margin: auto;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .view-appointment-lightbox .lightbox-navigation {
+    width: 30%;
+  }
+}
+
+.view-appointment-lightbox .lightbox-navigation .lightbox-nav {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.view-appointment-lightbox .lightbox-navigation .lightbox-nav .close-lightbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.view-appointment-lightbox .lightbox-navigation h4 {
+  margin-bottom: 10px;
+}
+
+.hospital-setup-form {
+  background: #fff;
+  padding: 20px;
+  height: 500px;
+  display: none;
+}
+
+.hospital-setup-form h3 {
+  color: #c5c5c5;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #c5c5c5;
+  margin-bottom: 10px;
+}
+
+.hospital-setup-form .hospital-setup input {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #c5c5c5;
+  height: 30px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.hospital-setup-form .hospital-setup .register-hospital-btn {
+  float: right;
+}
+
+.hospital-profile {
+  display: none;
+}
+
+.hospital-profile .hospital-details .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view-pending-appointments-lightbox {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.view-pending-appointments-lightbox .lightbox-navigation {
+  width: 100%;
+  border-radius: 10px;
+  height: 95vh;
+  margin: auto;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .view-pending-appointments-lightbox .lightbox-navigation {
+    width: 60%;
+    height: 65vh;
+  }
+}
+
+.view-pending-appointments-lightbox .lightbox-navigation .lightbox-nav {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.view-pending-appointments-lightbox .lightbox-navigation .lightbox-nav .close-requests-lightbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.view-pending-appointments-lightbox .lightbox-navigation ul {
+  list-style: none;
+}
+
+.view-pending-appointments-lightbox .lightbox-navigation ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 70px;
+  padding-top: 10px;
+  height: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .view-pending-appointments-lightbox .lightbox-navigation ul li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 30px;
+  }
+}
+
+.view-pending-appointments-lightbox .lightbox-navigation ul li .appointment-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.view-checkup-lightbox {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.view-checkup-lightbox .lightbox-navigation {
+  width: 100%;
+  border-radius: 10px;
+  height: 95vh;
+  margin: auto;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .view-checkup-lightbox .lightbox-navigation {
+    width: 60%;
+    height: 65vh;
+  }
+}
+
+.view-checkup-lightbox .lightbox-navigation .lightbox-nav {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.view-checkup-lightbox .lightbox-navigation .lightbox-nav .close-checkup-lightbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.view-checkup-lightbox .lightbox-navigation ul {
+  list-style: none;
+}
+
+.view-checkup-lightbox .lightbox-navigation ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 70px;
+  padding-top: 10px;
+  height: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .view-checkup-lightbox .lightbox-navigation ul li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 30px;
+  }
+}
+
+.view-checkup-lightbox .lightbox-navigation ul li .appointment-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.view-all-patients-lightbox {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.view-all-patients-lightbox .lightbox-navigation {
+  width: 100%;
+  border-radius: 10px;
+  height: 95vh;
+  margin: auto;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .view-all-patients-lightbox .lightbox-navigation {
+    width: 60%;
+    height: 65vh;
+  }
+}
+
+.view-all-patients-lightbox .lightbox-navigation .lightbox-nav {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.view-all-patients-lightbox .lightbox-navigation .lightbox-nav .close-requests-lightbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.view-all-patients-lightbox .lightbox-navigation ul {
+  list-style: none;
+}
+
+.view-all-patients-lightbox .lightbox-navigation ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 65px;
+  padding-top: 15px;
+  height: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .view-all-patients-lightbox .lightbox-navigation ul li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 25px 0;
+  }
+}
+
+.view-all-patients-lightbox .lightbox-navigation ul li h6 {
+  font-size: 18px;
+}
+
+.book-checkup-lightbox {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.book-checkup-lightbox .lightbox-navigation {
+  width: 75%;
+  border-radius: 10px;
+  height: 40vh;
+  margin: auto;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .book-checkup-lightbox .lightbox-navigation {
+    max-width: 450px;
+    max-height: 250px;
+  }
+}
+
+@media (min-width: 900px) {
+  .book-checkup-lightbox .lightbox-navigation {
+    max-width: 450px;
+    max-height: 250px;
+  }
+}
+
+.book-checkup-lightbox .lightbox-navigation .lightbox-nav {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.book-checkup-lightbox .lightbox-navigation .lightbox-nav .close-checkup-lightbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.book-checkup-lightbox .lightbox-navigation .book-checkup-reason {
+  margin: 10px 0;
+  width: 100%;
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.book-checkup-lightbox .lightbox-navigation .book-checkup-date {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.book-checkup-lightbox .lightbox-navigation .btn-container {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.book-checkup-lightbox .lightbox-navigation h4 {
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=doctor-dashboard.css.map */

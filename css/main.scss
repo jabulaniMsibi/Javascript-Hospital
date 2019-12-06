@@ -1,0 +1,931 @@
+// ------------------------ NAVIGATION ------------------------
+
+// CTRL + F == USE TO FIND WHAT YOU LOOKING FOR
+// 1.) GLOBAL BUTTON STYLE
+// 2.) MAIN NAV
+// 3.) CONTENT CONTAINER
+// 4.) DASHBOARD MENU
+// 5.) CALENDAR
+// 6.) DAILY DUTIES
+// 7.) LEGEND
+// 8.) APPOINTMENT LIGHTBOX
+// 9.) CHECKUP LIGHTBOX
+// 10.) BOOK APPOINTMENT LIGHTBOX
+// 11.) 600PX MEDIA QUERY
+// 12.) 900PX MEDIA QUERY
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+li:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.fa-calendar-check {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #00897b;
+    color: #fff;
+    margin-left: 30px;
+    font-size: 10px;
+    display: none;
+}
+
+
+body {
+    width: 100%;
+    background: #f5f5f5;
+    scroll-behavior: smooth;
+}
+
+// ----------------------------- GLOBAL BUTTON STYLE -----------------------------
+.btn {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: steelblue;
+    transition: all .75 ease-in-out;
+    color: #fff;
+
+    &:hover {
+        background: darken(steelblue, 10%);
+    }
+}
+// ----------------------------- MAIN NAV -----------------------------
+.main-nav {
+    height: 75px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-color: #00897b;
+    color: white;
+    padding: 0 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+
+
+    .profile-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @media (min-width: 725px) {
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-actions {
+            position: absolute;
+            top: 75px;
+            right: 0;
+            background: #fff;
+            width: 170px;
+            height: 30px;
+            border: 1px solid #00897b;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+            transform: translateY(-30px);
+            opacity: 0;
+            transition: all .3s ease-in-out;
+
+            &.active {
+                transform: translateY(0);
+                opacity: 1;                
+            }
+
+            h3 {
+                text-transform: uppercase;
+                color: #000;
+            }
+        }
+
+        i {
+            margin-right: 10px;
+        }
+    }
+}
+
+// ----------------------------- CONTENT CONTAINER -----------------------------
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: auto;
+
+    .main-navigation {
+        padding: 20px;
+        background: #fff;
+        font-weight: 300;
+        border-radius: 5px;
+        margin-bottom: 25px;
+
+        .main-nav-header {
+            height: auto;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px rgba(0, 0, 0, 0.3);
+        }
+    
+        .hospital-details {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            border-bottom: 1px solid #c5c5c5; 
+            height: 80px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            h3 {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+// ----------------------------- DASHBOARD MENU -----------------------------
+        .dashboard-menu {
+            display: block;
+            margin: 10px 0;
+
+            h4 {
+                color: #c5c5c5;
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .acordian-menu {
+                list-style: none;
+                text-transform: uppercase;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 10px;
+
+                .item {
+                    border-top: 1px solid #00897b;
+                    overflow: hidden;
+
+                    .dropdown-btn {
+                        display: block;
+                        padding: 16px 20px;
+                        background: #00897b;
+                        color: #fff;
+                        position: relative;
+                        text-decoration: none;
+                        // @media (min-width: 600px) {
+                        //     padding: 10px 20px;
+                        // }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 16px;
+                            height: 16px;
+                            background: #00897b;
+                            left: 20px;
+                            bottom: -7px;
+                            transform: rotate(45deg);
+                        }
+
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .acordian-drop {
+                        overflow: hidden;
+                        background: #c5c5c5;
+                        transition: all .5s;
+                        max-height: 0;
+
+                        a {
+                            text-decoration: none;
+                            display: block;
+                            padding: 16px 26px;
+                            color: #fff;
+                            font-size: 14px;
+                            margin: 4px 0;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 6px;
+                                height: 100%;
+                                background: #000;
+                                top: 0;
+                                left: 0;
+                                transition: all .3s;
+                                opacity: 0;
+                            }
+
+                            &:hover::before {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    &:target .acordian-drop{
+                        max-height: 10em;
+                    }
+                }
+            }
+        }
+    }
+
+// ----------------------------- CALLENDAR -----------------------------
+    .calendar {
+        background: #fff;
+        height: auto;
+        padding: 20px;
+        background: #fff;
+        font-weight: 300;
+        border-radius: 5px;
+
+        .days {
+            display:flex;
+            justify-content: center; 
+            // display: none;
+
+
+            div {
+                text-align: center;
+                font-size: 10px;
+                display: inline-block;
+                width: 15%;
+                border: 1px solid #c5c5c5;
+
+                h5 {
+                    border-bottom: 1px solid #c5c5c5;
+                    text-align: left
+                }
+                .day-block {
+                    text-align: left;
+                    display: inline-block;
+                    width: 100%;
+                    height: 20px;
+                    border-bottom: 1px solid #c5c5c5;
+                    font-size: 8px;
+
+                    &.appointment {
+                        background: #00897b;
+                    }
+
+                    &.checkup {
+                        background: #ec3f7a;
+                    }
+
+                    &.next-month {
+                        background: rgb(134, 134, 134);
+                    }
+                }
+
+            }
+        }
+        .doctor-info {
+            display: none;
+            @media (min-width: 1024px) {
+                max-width: 800px;
+                margin: auto;
+            } 
+             
+            .header {
+                text-align: center;
+                color: #333;
+                text-transform: uppercase;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+            }
+
+            .header-text-and-image-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 35px;
+
+                .header-text {
+                    h4 {
+                        font-size: 20px;
+                        border-bottom: 1.5px solid #00897b;
+                        
+                        @media (min-width: 600px) {
+                            font-size: 25px;
+                        }
+                    }
+                }
+
+                .image-container {
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        @media (min-width: 600px) {
+                            max-width: 250px; 
+                        }
+                    }
+                }
+            }
+
+            .doctor-details {
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline;
+                margin-bottom: 8px;
+
+                .left {
+                    width: 50%;
+
+                    h5 {
+                        font-size: 18px;
+                        font-weight: lighter;
+                    }
+                }
+            }
+
+            h4 {
+                margin-bottom: 5px;
+                font-size: 15px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .patient-info {
+            display: none; 
+             
+            .header {
+                text-align: center;
+                color: #333;
+                text-transform: uppercase;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+            }
+
+            .header-text-and-image-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 35px;
+
+                .header-text {
+                    h4 {
+                        font-size: 20px;
+                        border-bottom: 1.5px solid #00897b;
+                        
+                        @media (min-width: 600px) {
+                            font-size: 25px;
+                        }
+                    }
+                }
+
+                .image-container {
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        @media (min-width: 600px) {
+                            max-width: 250px; 
+                        }
+                    }
+                }
+            }
+
+            .patient-details {
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline;
+                margin-bottom: 8px;
+
+                .left {
+                    width: 50%;
+
+                    h5 {
+                        font-size: 18px;
+                    }
+                }
+
+                .right {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        display: none;
+                    }
+                }
+            }
+
+            h4 {
+                margin-bottom: 5px;
+                font-size: 15px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .profile-options {
+            width: 100%;
+            display: flex;
+            align-items: center;    
+            justify-content: flex-end;       
+            
+            .save-btn-container {
+                display: none;
+            }
+        }
+
+        .patient-registration {
+             display: none;
+
+            .row1, .row2, .row3 {
+                display: flex;
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                    margin-bottom: 10px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+// ----------------------------- DAILY DUTIES -----------------------------
+    .daily-duties {
+        background: #fff;
+        font-weight: 300;
+        border-radius: 5px;
+        margin: 25px 0 0 0;
+        padding: 0 20px; 
+        height: auto;
+
+        h5 {
+            color: #c5c5c5;
+            font-size: 15px; 
+            text-transform: uppercase;
+            display: inline-block;
+            width: 100%;
+            padding: 5px 0;
+            border-bottom: 1px solid #c5c5c5;
+            margin-bottom: 10px;
+        }
+
+        .duties-input-container {
+            width: 100%;
+            text-align: right;
+
+            input {
+                width: 100%;
+                border-radius: 3px;
+                border: 1px solid #c5c5c5;
+                height: 30px;
+                margin-bottom: 20px;
+            }
+
+            button {
+                margin-bottom: 25px;
+
+                &:hover {
+                    background: darken(steelblue, 10%)
+                }
+            }
+        }
+
+        .added-tasks {
+            padding-bottom: 30px;
+
+            h3 {
+                display: none;
+                color: #c5c5c5;
+                font-size: 15px; 
+                text-transform: uppercase;
+                width: 100%;
+                padding: 5px 0;
+                border-bottom: 1px solid #c5c5c5;
+                margin-bottom: 10px;
+            }
+
+            .tasks {
+                list-style: none;
+            }
+        }
+    }
+}
+
+.hospital-setup-form {
+    background: #fff;
+    border-radius: 10px;
+    width: 98%;
+    margin: 25px auto;
+    margin-top: 25px;
+    padding: 15px;
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #c5c5c5;
+        border-bottom: 1px solid #c5c5c5;
+    }
+
+    .hospital-setup {
+
+        label {
+            display: block;
+            width: 260px;
+            margin: 25px 0;
+            text-align: left;
+          }
+
+          label span {
+            font-size: 12px;
+            color: #cfcfcf;
+            text-transform: uppercase;
+          }
+          
+          input {
+            display: block;
+            width: 100%;
+            margin-top: 5px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+            outline: none;
+            transition: all .25s ease-in-out;
+
+            &:focus {
+                border-bottom: 1px solid steelblue;
+            }
+        }
+    }
+}
+
+// ----------------------------- LEGEND -----------------------------
+.legend {
+    background: steelblue;
+    color: #fff;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 25px;
+    width: 98%;
+    transform: translateX(90%);
+    padding: 10px;
+    position: fixed;
+    transition: all .5s ease-in-out;
+    @media (min-width: 350px) and (max-width: 599px){
+        transform: translateX(96.5%);
+    }
+    @media (min-width: 600px) {
+        transform: translateX(96.5%);
+    }
+    @media (min-width: 900px) {
+        transform: translateX(99%);
+    }
+    
+    &.active {
+        transform: translateX(3%);
+        z-index: 5;
+        @media (min-width: 600px) {
+            transform: translateX(75%);
+        }
+    }
+
+    .appointment-legend {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; 
+
+        .box-color {
+            height: 25px;
+            width: 25px;
+            margin-right: 10px; 
+
+            &.pink-color {
+                background: #ec3f7a;
+            }
+
+            &.green-color {
+                background: #00897b;
+            }
+        }
+    }
+}
+
+// ----------------------------- APPOINTMENT LIGHTBOX -----------------------------
+.view-appointment-lightbox {
+    height: 100vh;
+    width: 100%;
+    background-color: #00897b83;
+    color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+
+    .lightbox-navigation {
+        width: 75%;
+        border-radius: 10px;
+        height: 40vh;
+        margin: auto;
+        background: #fff;
+        text-align: left;
+        padding: 10px;
+        @media (min-width: 600px) {
+            width: 30%; 
+        }
+
+        .lightbox-nav {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+            .close-lightbox {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+            }
+        }
+
+        h4 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// ----------------------------- CHECKUP LIGHTBOX -----------------------------
+.view-checkup-lightbox {
+    height: 100vh;
+    width: 100%;
+    background-color: #ec3f7979;
+    color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+
+    .lightbox-navigation {
+        width: 75%;
+        border-radius: 10px;
+        height: 40vh;
+        margin: auto;
+        background: #fff;
+        text-align: left;
+        padding: 10px;
+        @media (min-width: 600px) {
+            width: 30%; 
+        }
+
+        .lightbox-nav {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+            .close-checkup-lightbox {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+            }
+        }
+
+        h4 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+// ----------------------------- BOOK APPOINTMENT LIGHTBOX -----------------------------
+.book-appointment-lightbox {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+
+    .lightbox-navigation {
+        width: 75%;
+        border-radius: 10px;
+        height: 40vh;
+        margin: auto;
+        background: #fff;
+        text-align: left;
+        padding: 10px;
+        @media (min-width: 600px) {
+            max-width: 450px;
+            max-height: 250px;
+        }
+
+        @media (min-width: 900px) {
+            max-width: 450px;
+            max-height: 250px;
+        }
+
+        .lightbox-nav {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+            .close-booking-lightbox {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .book-appointment-reason {
+            margin: 10px 0;
+            width: 100%;
+            border: none;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        .book-appointment-date {
+            margin-top: 10px;
+            width: 100%;
+            border: none;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-container {
+            text-align: right;
+            margin-top: 10px;
+        } 
+
+        h4 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+// ----------------------------- 600PX MEDIA QUERY -----------------------------
+@media (min-width: 600px) {
+    .main-nav {
+   
+        .logo-container {
+         font-size: 18px;
+         text-transform: uppercase;   
+        }
+    }
+
+    .content-container {
+        display: grid;
+        grid-template-columns: 5% 1fr 3% 1fr 5%;
+        grid-template-rows: 800px 1fr 1fr;
+        grid-template-areas: 
+        ". main-navigation . daily-duties ."
+        ". calendar calendar calendar ."
+        ". calendar calendar calendar .";
+
+        .main-navigation {
+            grid-area: main-navigation;
+            height: 400px;
+            width: 100%;
+        }        
+
+        .daily-duties {
+            grid-area: daily-duties;
+            height: 400px;
+            margin-top: 0;
+        }
+
+        .calendar {
+            grid-area: calendar;
+            height: 470px;
+
+            .days {
+                height: 100%;
+
+                div {
+                    height: 100%;
+
+                    h5 {
+                        height: 25px;
+                        font-size: 13px;
+                        padding-top: 5px;
+                    }
+    
+                    .day-block {
+                        height: 80px;
+                        font-size: 20px;
+
+                        &.next-month {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ----------------------------- 900PX MEDIA QUERY -----------------------------
+@media (min-width: 900px) {
+    .content-container {
+        display: grid;
+        grid-template-columns: 2% 1fr 3fr 1fr 2%;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        ". main-navigation calendar daily-duties ."
+        ". ............... calendar ............ .";
+
+        .main-navigation {
+            grid-area: main-navigation;
+            height: 600px;
+            max-width: 100%;
+        }        
+
+        .daily-duties {
+            grid-area: daily-duties;
+            height: 600px;
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .calendar {
+            grid-area: calendar;
+            height: 600px;
+            width: 95%;
+            margin: 0 auto;
+            transform: translate(0);
+            overflow: hidden;
+
+            .days {
+                height: 590px;
+
+                div {
+
+                    h5 {
+                        height: 25px;
+                        font-size: 13px;
+                        padding-top: 5px;
+                    }
+    
+                    .day-block {
+                        height: 110px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

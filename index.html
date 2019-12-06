@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/d4ff94fd32.js" crossorigin="anonymous"></script>
+    <title>Helping Hands | Hospital Management</title>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="logo-container">
+            <h2>Helping Hands</h2>
+        </div>
+        <div class="profile-container">
+            <div class="profile-content">
+                <i class="fas fa-user-circle"></i>
+                <h2>Mr Patient</h2>
+            </div>
+            <div class="profile-actions">
+                <h3>log out <i class="fas fa-sign-out-alt"></i></h3>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legend">
+        <div class="appointment-legend">
+            <div class="box-color green-color"></div>All Appointments
+        </div>
+        <div class="appointment-legend">
+            <div class="box-color pink-color"></div>All Checkups
+        </div>
+    </div>
+
+
+    <div class="content-container">
+        <div class="main-navigation">
+            <div class="main-nav-header">
+                <h2>Main Navigation</h2>
+            </div>
+            <div class="hospital-details">
+                <img src="images/h-a-m-a-n-n-8kDx62gZRzk-unsplash-min.jpg" alt="">
+                <h3 class="hospital-name">NSK Hospital</h3>
+            </div>
+            <div class="dashboard-menu">
+                <h4>MAIN</h4>
+                <ul class="acordian-menu">
+                    <li class="item" id="doctor">
+                        <a href="#doctor" class="dropdown-btn"><i class="fas fa-syringe"></i>Doctor</a>
+                        <div class="acordian-drop">
+                            <a href="#" class="view-doctor">View Doctor Information</a>
+                        </div>
+                    </li>
+
+                    <li class="item" id="patient">
+                        <a href="#patient" class="dropdown-btn"><i class="fas fa-user-nurse"></i>Patient</a>
+                        <div class="acordian-drop">
+                            <a href="#" class="view-patient">View Patient Information</a>
+                        </div>
+                    </li>
+                    
+                    <li class="item" id="appointment">
+                        <a href="#appointment" class="dropdown-btn"><i class="far fa-calendar-plus"></i>Appointments</a>
+                        <div class="acordian-drop">
+                            <a href="#">View Appointments</a>
+                            <a href="#" class="book-appointment">Book Appointment</a>
+                        </div>
+                    </li>
+                    
+                    <li class="item" id="admission">
+                        <a href="#admission" class="dropdown-btn"><i class="fas fa-history"></i>Admission History</a>
+                        <div class="acordian-drop">
+                            <a href="#">View Admission Records</a>
+                        </div>
+                    </li>
+                    
+                    <li class="item" id="profile">
+                        <a href="#profile" class="dropdown-btn"><i class="far fa-user"></i>Profile</a>
+                        <div class="acordian-drop">
+                            <a href="#" class="view-profile">Edit Profile</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="calendar">
+            <div class="days">
+                <div>
+                    <h5>Mon</h5>
+                    <span id="1" class="day-block book">1</span>
+                    <span id="8" class="day-block book">8</span>
+                    <span id="15" class="day-block appointment">15</span>
+                    <span id="22" class="day-block book">22</span>
+                    <span id="29" class="day-block book">29</span>
+                </div>
+                <div>
+                    <h5>Teu</h5>
+                    <span id="2" class="day-block book">2</span>
+                    <span id="9" class="day-block book">9</span>
+                    <span id="16" class="day-block book">16</span>
+                    <span id="23" class="day-block book">23</span>
+                    <span id="30" class="day-block book">30</span>
+                </div>
+                <div>
+                    <h5>Wed</h5>
+                    <span id="3" class="day-block book">3</span>
+                    <span id="10" class="day-block book">10</span>
+                    <span id="17" class="day-block book">17</span>
+                    <span id="24" class="day-block book">24</span>
+                    <span id="31" class="day-block book">31</span>
+                </div>
+                <div>
+                    <h5>Thurs</h5>
+                    <span id="4" class="day-block book">4</span>
+                    <span id="11" class="day-block book">11</span>
+                    <span id="18" class="day-block book">18</span>
+                    <span id="25" class="day-block book">25</span>
+                    <span class="day-block next-month">1</span>
+                </div>
+                <div>
+                    <h5>Fri</h5>
+                    <span class="day-block checkup">5</span>
+                    <span id="12" class="day-block book">12</span>
+                    <span id="19" class="day-block book">19</span>
+                    <span id="26" class="day-block book">26</span>
+                    <span class="day-block next-month">2</span>
+                </div>
+                <div>
+                    <h5>Sat</h5>
+                    <span id="6" class="day-block book">6</span>
+                    <span id="13" class="day-block book">13</span>
+                    <span id="20" class="day-block book">20</span>
+                    <span id="27" class="day-block book">27</span>
+                    <span class="day-block next-month">3</span>
+                </div>
+                <div>
+                    <h5>Sun</h5>
+                    <span id="7" class="day-block book">7</span>
+                    <span id="14" class="day-block book">14</span>
+                    <span id="21" class="day-block book">21</span>
+                    <span id="28" class="day-block appointment">28</span>
+                    <span class="day-block next-month">4</span>
+                </div>             
+            </div>
+            <div class="doctor-info">
+                <div class="header">
+                    <h3>Information for: </h3>
+                </div>
+                <div class="header-text-and-image-container">
+                    <div class="header-text">
+                        <h4> Dr Jane Doe</h4>
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/nurse.jpg" alt="jane doe">
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <div class="left">
+                        <h5>Position</h5>
+                    </div>
+                    <div class="right">
+                        <h5>Chief Medical Officer MD, PhD</h5>
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <div class="left">
+                        <h5>Clinical Interests</h5>
+                    </div>
+                    <div class="right">
+                        <ul>
+                            <li>Emergency Medicine</li>
+                            <li>Sports Medicine</li>
+                            <li>Addictions</li>
+                            <li>Pneumology</li>
+                            <li>Paediatrics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <div class="left">
+                        <h5>Profile</h5>
+                    </div>
+                    <div class="right">
+                        <p>Dr Jane Doe is a French trained General Practice Family Doctor. She graduated in 1991 from Toulouse Rangueil University of Medicine France and has additional qualifications in ultrasound, additions, emergency medicine, traumatology and pneumology.
+                            After his military service in the air force, he has worked for more than 15 years in the French countryside and mountainous regions including in some remote places and ski resorts.
+                            Dr Gaudeul’s has extensive medical experience across general medicine, emergency medicine, radiology, trauma, pneumology, addictions and paediatrics.
+                            Dr Gaudeul joined our Shenzhen clinic in 2014 and provides quality, compassionate care to all his patients.
+                            He is fluent in French and English and has professional proficiency in Spanish.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="patient-info">
+                    <div class="header">
+                        <h3> PROFILE </h3>
+                    </div>
+                    <div class="header-text-and-image-container">
+                        <div class="header-text">
+                            <h4>Mark Hammil</h4>
+                        </div>
+                        <div class="image-container">
+                            <img src="/images/nurse.jpg" alt="jane doe">
+                        </div>
+                    </div>
+
+                    <div class="patient-details">
+                        <div class="left">
+                            <h5>Reason For Visit</h5>
+                        </div>
+                        <div class="right">
+                            <h5 class="value-to-edit" id="reason"></h5>
+                            <input type="text" class="hidden visit-reason" placeholder="Reason For Visit">
+                        </div>
+                    </div>
+                    <div class="patient-details">
+                        <div class="left">
+                            <h5>Admission Date</h5>
+                        </div>
+                        <div class="right">
+                            <h5 class="value-to-edit" id="a-date"></h5>
+                            <input type="date" class="hidden admit-date" placeholder="Reason For Visit">
+                        </div>
+                    </div>
+                    <div class="patient-details">
+                        <div class="left">
+                            <h5>Discharge Date</h5>
+                        </div>
+                        <div class="right">
+                            <h5 class="value-to-edit" id="d-date"></h5>
+                            <input type="date" class="hidden discharge-date" placeholder="Reason For Visit">
+                        </div>
+                    </div>
+                    <div class="patient-details">
+                        <div class="left">
+                            <h5>Cellphone Number</h5>
+                        </div>
+                        <div class="right">
+                            <h5 class="value-to-edit" id="cell-number"></h5>
+                            <input type="text" class="hidden" id="cell-number-input" placeholder="Reason For Visit">
+                        </div>
+                    </div>
+                    <div class="patient-details">
+                        <div class="left">
+                            <h5>Fax Number</h5>
+                        </div>
+                        <div class="right">
+                            <h5 class="value-to-edit" id="fax-number"></h5>
+                            <input type="text" class="hidden" id="fax-number-input" placeholder="Reason For Visit">
+                        </div>
+                    </div>
+                    <div class="patient-details">
+                        <div class="left">
+                            <h5>Reason For Visit</h5>
+                        </div>
+                        <div class="right">
+                            <h5 class="value-to-edit">:Major Flu</h5>
+                            <input type="text" class="hidden" placeholder="Reason For Visit">
+                        </div>
+                    </div>
+                    <div class="patient-details">
+                        <div class="left">
+                            <h5>Contact Address</h5>
+                        </div>
+                        <div class="right">
+                            <h5 class="value-to-edit" id="address"></h5>
+                            <input type="text" class="hidden" id="address-input" placeholder="Reason For Visit">
+                        </div>
+                    </div>
+                    <div class="profile-options">
+                        <div class="edit-btn-container">
+                            <button class="edit-btn btn">Edit</button>
+                        </div>
+                        <div class="save-btn-container">
+                            <button class="save-btn btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="patient-registration">
+                    <div class="row1">
+                        <label>
+                            <span>First Name</span>
+                            <input type="text" class="patient-firstname">
+                        </label>
+                        <label>
+                            <span>Last Name</span>
+                            <input type="text" class="patient-lastname">
+                        </label>
+                    </div>
+                    <div class="row2">
+                        <label>
+                            <span>Email Address</span>
+                            <input type="email" class="patient-email">
+                        </label>
+                        <label>
+                            <span>Cellphone Number</span>
+                            <input type="tel" class="patient-tel">
+                        </label>
+                    </div>
+                    <div class="row3">
+                        <label>
+                            <span>Physical Address</span>
+                            <input type="text" class="patient-address">
+                        </label>                             
+                        <label>
+                            <span>Blood Group</span>
+                            <input type="text" class="patient-blood-group">
+                        </label>                             
+                    </div>
+                </div>
+        </div>
+        <div class="daily-duties">
+           <h5>Daily Duties</h5>
+            <div class="duties-input-container">
+                <input type="text" class="task-name" placeholder="Task Name">
+                <input type="text" class="task-description" placeholder="Task Description">
+                <button class="btn add-task" type="button">Add Task</button>
+            </div>
+            <div class="added-tasks">
+                <h3 class="tasklist-heading">Task List</h3>
+                <ul class="tasks"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none;" class="hospital-setup-form">
+        <h3>Register your hospital</h3>
+        <form class="hospital-setup">
+            <label>
+                <span>Hospital Name</span>
+                <input type="text" class="hospital-name">
+            </label>
+            <label>
+                <span>Email</span>
+                <input type="email"class="hospital-email" >
+            </label>
+            <label>
+                <span>Physical Address</span>
+                <input type="text" class="hospital-address">
+            </label>
+            <label>
+                <span>Telephone Number</span>
+                <input type="tel" class="hospital-number">
+            </label>
+            <button class="btn register-hospital-btn" type="submit">Submit form</button>
+        </form>
+    </div>
+
+    <div class="view-appointment-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Appointment Details</h3>
+                <div class="close-lightbox">X</div>
+            </div>
+            <h4>Appointment Date: 22 /03 /2019</h4>
+            <h4>Document: Last Medical Report </h4>
+        </div>
+    </div>
+
+    <div class="view-checkup-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Checkup Details</h3>
+                <div class="close-checkup-lightbox">X</div>
+            </div>
+            <h4>Appointment Date: 22 /03 /2019</h4>
+            <h4>Document: Last Medical Report </h4>
+        </div>
+    </div>
+    
+    <div class="book-appointment-lightbox">
+        <div class="lightbox-navigation">
+            <form action="">
+                <div class="lightbox-nav">
+                    <h3>Book Appointment</h3>
+                    <div class="close-booking-lightbox">X</div>
+                </div>
+                <label>
+                    <span>Reason for visit: </span>
+                    <input type="text" class="book-appointment-reason">
+                </label>
+                <br>
+                <label>
+                    <span>Please Choose A Date: </span>
+                    <input type="date" class="book-appointment-date">
+                </label>
+                <div class="btn-container">
+                    <button type="submit" class="btn book-appointment-btn">Book Appointment</button>                    
+                </div>
+           </form>
+        </div>
+    </div>
+
+
+    <script src="js/index.js"></script>
+    <script src="js/projectModel/profile.js"></script>
+</body>
+</html>

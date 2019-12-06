@@ -1,0 +1,11 @@
+{
+  "patient_id":1,
+  "contactDetails":{},
+  "appointements":[
+    {
+      "hostpital_id":1,
+      "doctor_id":3
+    }
+  ],
+  "tasks":[]
+}

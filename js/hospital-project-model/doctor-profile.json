@@ -1,0 +1,15 @@
+{
+  "doctor_id":1,
+  "specialities":[
+    "nueroscience"
+  ],
+  "tasks":[],
+  "appointements":[
+    {
+      "userId":1,
+      "details":{
+        "symtons":[]
+      }
+    }
+  ]
+}

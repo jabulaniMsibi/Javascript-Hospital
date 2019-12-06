@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css\patient-dashboard.css">
+    <title>Helping Hands | Patient Dashboard</title>
+</head>
+
+<body>
+
+    <nav class="header-nav">
+        <div class="logo-container">
+            <img src="/images/HH.png" alt="helping hands logo">
+        </div>
+        <div class="open-menu-container">
+            <div class="open-menu-btn"></div>
+        </div>
+    </nav>
+
+    <div class="main-navigation">
+        <div class="main-nav-header">
+            <div class="main-nav-header-text">
+                <h2>Main Navigation</h2>
+            </div>
+            <div class="close-menu-btn-container">
+                <h2>X</h2>
+            </div>
+        </div>
+        <div class="patient-details">
+            <img class="patient-dp" src="" alt="">
+            <h3 class="patient-name"></h3>
+        </div>
+        <div class="dashboard-menu">
+            <h4>MAIN</h4>
+            <ul class="acordian-menu">
+                <li class="item" id="hospital">
+                    <a href="#hospital" class="dropdown-btn"><i class="far fa-hospital"></i>Hospital</a>
+                    <div class="acordian-drop">
+                        <a href="#" class="view-hospital-btn">View Profile</a>
+                    </div>
+                </li>
+
+                <li class="item" id="doctor">
+                    <a href="#doctor" class="dropdown-btn"><i class="fas fa-syringe"></i>Doctor</a>
+                    <div class="acordian-drop">
+                        <a class="view-doctor" href="#">View Doctor Information</a>
+                    </div>
+                </li>
+
+                <li class="item" id="patient">
+                    <a href="#patient" class="dropdown-btn"><i class="fas fa-user-nurse"></i>Patient</a>
+                    <div class="acordian-drop">
+                        <a href="#" class="view-patient">View Patient Information</a>
+                    </div>
+                </li>
+
+                <li class="item" id="appointment">
+                    <a href="#appointment" class="dropdown-btn"><i class="far fa-calendar-plus"></i>Appointments</a>
+                    <div class="acordian-drop">
+                        <a href="#" class="view-appointments">View Appointments</a>
+                        <a href="#" class="book-appointment-btn">Book Appointment</a>
+                    </div>
+                </li>
+
+                <li class="item" id="admission">
+                    <a href="#admission" class="dropdown-btn"><i class="fas fa-history"></i>Admission History</a>
+                    <div class="acordian-drop">
+                        <a href="#">View Admission Records</a>
+                    </div>
+                </li>
+
+                <li class="item" id="profile">
+                    <a href="#profile" class="dropdown-btn"><i class="far fa-user"></i>Profile</a>
+                    <div class="acordian-drop">
+                        <a href="#" class="view-profile">Edit Profile</a>
+                        <a href="#" class="sign-out-btn">Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="calendar">
+            <div class="days">
+                <h3 class="calendar-header" id="monthAndYear"></h3>
+                <table class="table" id="calendar">
+                    <thead>
+                    <tr class="table-head">
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                    </thead>
+        
+                    <tbody id="calendar-body"> </tbody>
+                </table>
+        
+                <div class="form-inline">
+        
+                    <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+        
+                    <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+                </div>
+                <br/>
+                <form class="form-inline">
+                    <label class="lead " for="month">Jump To: </label>
+                    <select class="form-control" name="month" id="month" onchange="jump()">
+                        <option value=0>Jan</option>
+                        <option value=1>Feb</option>
+                        <option value=2>Mar</option>
+                        <option value=3>Apr</option>
+                        <option value=4>May</option>
+                        <option value=5>Jun</option>
+                        <option value=6>Jul</option>
+                        <option value=7>Aug</option>
+                        <option value=8>Sep</option>
+                        <option value=9>Oct</option>
+                        <option value=10>Nov</option>
+                        <option value=11>Dec</option>
+                    </select>
+        
+        
+                    <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+                    <option value=1990>1990</option>
+                    <option value=1991>1991</option>
+                    <option value=1992>1992</option>
+                    <option value=1993>1993</option>
+                    <option value=1994>1994</option>
+                    <option value=1995>1995</option>
+                    <option value=1996>1996</option>
+                    <option value=1997>1997</option>
+                    <option value=1998>1998</option>
+                    <option value=1999>1999</option>
+                    <option value=2000>2000</option>
+                    <option value=2001>2001</option>
+                    <option value=2002>2002</option>
+                    <option value=2003>2003</option>
+                    <option value=2004>2004</option>
+                    <option value=2005>2005</option>
+                    <option value=2006>2006</option>
+                    <option value=2007>2007</option>
+                    <option value=2008>2008</option>
+                    <option value=2009>2009</option>
+                    <option value=2010>2010</option>
+                    <option value=2011>2011</option>
+                    <option value=2012>2012</option>
+                    <option value=2013>2013</option>
+                    <option value=2014>2014</option>
+                    <option value=2015>2015</option>
+                    <option value=2016>2016</option>
+                    <option value=2017>2017</option>
+                    <option value=2018>2018</option>
+                    <option value=2019>2019</option>
+                    <option value=2020>2020</option>
+                    <option value=2021>2021</option>
+                    <option value=2022>2022</option>
+                    <option value=2023>2023</option>
+                    <option value=2024>2024</option>
+                    <option value=2025>2025</option>
+                    <option value=2026>2026</option>
+                    <option value=2027>2027</option>
+                    <option value=2028>2028</option>
+                    <option value=2029>2029</option>
+                    <option value=2030>2030</option>
+                </select></form>
+            </div>
+
+            <div class="hospital-profile">
+                <h3>Hospital Details</h3>
+
+                <div class="hospital-details">
+                    <div class="row">
+                        <h4>Name:</h4>
+                        <h4 class="hosp-name"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Email:</h4>
+                        <h4 class="hosp-email"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Number:</h4>
+                        <h4 class="hosp-number"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Address:</h4>
+                        <h4 class="hosp-address"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>City:</h4>
+                        <h4 class="hosp-city"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Province:</h4>
+                        <h4 class="hosp-province"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Country:</h4>
+                        <h4 class="hosp-country"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Zip Code:</h4>
+                        <h4 class="hosp-code"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-info">
+                <div class="header">
+                    <h3>ASSIGNED DOCTOR </h3>
+                </div>
+
+                <div class="header-and-image-container">
+                    <div class="header-text">
+                        <h4 class="doctors-name"></h4>
+                    </div>
+                    <div class="header-image">
+                        <img class="doctors-dp" alt="">
+                    </div>
+                </div>
+
+                <div class="doctor-details">
+                    <div class="key">
+                        <h4>Speciality</h4>
+                    </div>
+                    <div class="value">
+                        <h4 class="doctors-speciality"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="patient-info">
+                <div class="header">
+                    <h3> PROFILE </h3>
+                </div>
+
+                <div class="header-text-and-image-container">
+                    <div class="header-text">
+                        <h4 class="patient-name"></h4>
+                    </div>
+                    <div class="image-container">
+                        <img src="" class="patient-dp" alt="jane doe">
+                    </div>
+                </div>
+
+                <div class="patient-details">
+                    <div class="left">
+                        <h5>Email Address: </h5>
+                    </div>
+                    <div class="right">
+                        <h5 class="value-to-edit" id="email"></h5>
+                        <input type="text" class="hidden visit-email" placeholder="Reason For Visit">
+                    </div>
+                </div>
+
+                <div class="patient-details">
+                    <div class="left">
+                        <h5>Cellphone Number</h5>
+                    </div>
+                    <div class="right">
+                        <h5 class="value-to-edit" id="cell-number"></h5>
+                        <input type="text" class="hidden" id="cell-number-input" placeholder="Reason For Visit">
+                    </div>
+                </div>
+
+                <div class="patient-details">
+                    <div class="left">
+                        <h5>Fax Number</h5>
+                    </div>
+                    <div class="right">
+                        <h5 class="value-to-edit" id="fax-number"></h5>
+                        <input type="text" class="hidden" id="fax-number-input" placeholder="Reason For Visit">
+                    </div>
+                </div>
+
+                <div class="patient-details">
+                    <div class="left">
+                        <h5>Contact Address</h5>
+                    </div>
+                    <div class="right">
+                        <h5 class="value-to-edit" id="address"></h5>
+                        <input type="text" class="hidden" id="address-input" placeholder="Reason For Visit">
+                    </div>
+                </div>
+
+                <div class="patient-details">
+                    <div class="left">
+                        <h5>Blood Group: </h5>
+                    </div>
+                    <div class="right">
+                        <h5 class="value-to-edit" id="blood-group"></h5>
+                        <select class="hidden" id="blood-group-select">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="A-">A-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="B-+">AB-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="profile-options">
+                    <div class="edit-btn-container">
+                        <button class="edit-btn btn">Edit</button>
+                    </div>
+                    <div class="save-btn-container">
+                        <button class="save-btn btn">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="patient-registration">
+                <div class="row1">
+                    <label>
+                        <span>First Name</span>
+                        <input type="text" class="patient-firstname">
+                    </label>
+                    <label>
+                        <span>Last Name</span>
+                        <input type="text" class="patient-lastname">
+                    </label>
+                </div>
+                <div class="row2">
+                    <label>
+                        <span>Email Address</span>
+                        <input type="email" class="patient-email">
+                    </label>
+                    <label>
+                        <span>Cellphone Number</span>
+                        <input type="tel" class="patient-tel">
+                    </label>
+                </div>
+                <div class="row3">
+                    <label>
+                        <span>Physical Address</span>
+                        <input type="text" class="patient-address">
+                    </label>
+                    <label>
+                        <span>Blood Group</span>
+                        <select>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="A-">A-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="B-+">AB-</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="daily-duties">
+            <h5>Daily Duties</h5>
+            <div class="duties-input-container">
+                <input type="text" class="task-name" placeholder="Task Name">
+                <input type="text" class="task-description" placeholder="Task Description">
+                <div class="buttons-container">
+                    <button class="btn add-task" type="button">Add Task</button>
+                    <button class="btn save-edited-task" type="button">Save Task</button>
+                </div>
+            </div>
+            <div class="added-tasks">
+                <h3 class="tasklist-heading">Task List</h3>
+                <ul class="tasks"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-appointment-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Appointment Details</h3>
+                <div class="close-lightbox">X</div>
+            </div>
+            <h4 class="patients-name"></h4>
+            <h4 class="patients-id"></h4>
+            <h4 class="patients-reason"></h4>
+            <h4 class="patients-doctor"></h4>
+            <h4 class="appointment-date"></h4>
+
+            <ul class="appointment-details"></ul>
+
+            <a href="#" class="btn cancel-appointment">Cancel</a>
+        </div>
+    </div>
+
+    <div class="view-pending-appointment-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Pending Appointment Details</h3>
+                <div class="close-pending-lightbox">X</div>
+            </div>
+            <h4>Requested Date: 22 /03 /2019</h4>
+            <h4>Document To Bring: Last Medical Report </h4>
+        </div>
+    </div>
+
+    <div class="view-checkup-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Checkup Details</h3>
+                <div class="close-checkup-lightbox">X</div>
+            </div>
+            <ul class="checkup-details"></ul>
+        </div>
+    </div>
+
+    <div class="book-appointment-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Request Appointment</h3>
+                <div class="close-booking-lightbox">X</div>
+            </div>
+            <label>
+                <span>Reason for visit: </span>
+                <input type="text" class="book-appointment-reason">
+            </label>
+            <br>
+            <label>
+                <span>Please Choose A Date: </span>
+                <input type="date" class="book-appointment-date">
+            </label>
+            <div class="btn-container">
+                <button type="submit" class="btn submit-appointment-btn">Request Appointment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/scripts.js"></script>
+    <!-- <script src="/js/patient-dashboard.js"></script> -->
+    <script src="js\patientDashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/d4ff94fd32.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/doctor-dashboard.css">
+    <script src="https://kit.fontawesome.com/d4ff94fd32.js" crossorigin="anonymous"></script>
+    <title>Helping Hands | Doctor Dashboard</title>
+</head>
+<body>
+    <nav class="header-nav">
+        <div class="logo-container">
+            <img src="/images/HH.png" alt="helping hands logo">
+        </div>
+        <div class="open-menu-container">
+            <div class="open-menu-btn"></div>
+        </div>
+    </nav>
+
+    <div class="main-navigation">
+        <div class="main-nav-header">
+            <div class="main-nav-header-text">
+                <h2>Main Navigation</h2>
+            </div>
+            <div class="close-menu-btn-container">
+                <h2>X</h2>
+            </div>
+        </div>
+        <div class="patient-details">
+            <img src="" alt="" class="doctor-dp">
+            <h3 class="doctor-name"></h3>
+        </div>
+        <div class="dashboard-menu">
+            <h4>MAIN</h4>
+            <ul class="acordian-menu">
+                <li class="item" id="hospital">
+                    <a href="#hospital" class="dropdown-btn"><i class="far fa-hospital"></i>Hospital</a>
+                    <div class="acordian-drop">
+                        <a href="#" class="view-hospital-btn">View Hospital Profile</a>
+                        <a href="#" class="edit-hospital-btn">Register Hospital</a>
+                    </div>
+                </li>
+
+                <li class="item" id="doctor">
+                    <a href="#doctor" class="dropdown-btn"><i class="fas fa-syringe"></i>Doctor</a>
+                    <div class="acordian-drop">
+                        <a class="view-doctor" href="#">View All Doctors</a>
+                    </div>
+                </li>
+
+                <li class="item" id="patient">
+                    <a href="#patient" class="dropdown-btn"><i class="fas fa-user-nurse"></i>Patient</a>
+                    <div class="acordian-drop">
+                        <a href="#" class="view-patient">View All Patients</a>
+                    </div>
+                </li>
+
+                <li class="item" id="appointment">
+                    <a href="#appointment" class="dropdown-btn"><i class="far fa-calendar-plus"></i>Appointments</a>
+                    <div class="acordian-drop">
+                        <a href="#" class="view-appointments">View All Appointments</a>
+                        <div class="noti">
+                            <a href="#" class="view-pending-appointment-btn">View Pending Appointments</a> 
+                            <span class="notification"></span> 
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item" id="admission">
+                    <a href="#admission" class="dropdown-btn"><i class="fas fa-history"></i>Admission History</a>
+                    <div class="acordian-drop">
+                        <a href="#">View Admission Records</a>
+                    </div>
+                </li>
+
+                <li class="item" id="profile">
+                    <a href="#profile" class="dropdown-btn"><i class="far fa-user"></i>Profile</a>
+                    <div class="acordian-drop">
+
+                        <a href="#" class="view-profile">Edit Profile</a>
+                        <a href="#" class="sign-out-btn">Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="content-container">
+        <div class="calendar">
+            <div class="days">
+                <h3 class="calendar-header" id="monthAndYear"></h3>
+                <table class="table" id="calendar">
+                    <thead>
+                    <tr class="table-head">
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                    </thead>
+        
+                    <tbody id="calendar-body"> </tbody>
+                </table>
+        
+                <div class="form-inline">
+        
+                    <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+        
+                    <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+                </div>
+                <br/>
+                <form class="form-inline">
+                    <label class="lead " for="month">Jump To: </label>
+                    <select class="form-control" name="month" id="month" onchange="jump()">
+                        <option value=0>Jan</option>
+                        <option value=1>Feb</option>
+                        <option value=2>Mar</option>
+                        <option value=3>Apr</option>
+                        <option value=4>May</option>
+                        <option value=5>Jun</option>
+                        <option value=6>Jul</option>
+                        <option value=7>Aug</option>
+                        <option value=8>Sep</option>
+                        <option value=9>Oct</option>
+                        <option value=10>Nov</option>
+                        <option value=11>Dec</option>
+                    </select>
+        
+        
+                    <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+                    <option value=1990>1990</option>
+                    <option value=1991>1991</option>
+                    <option value=1992>1992</option>
+                    <option value=1993>1993</option>
+                    <option value=1994>1994</option>
+                    <option value=1995>1995</option>
+                    <option value=1996>1996</option>
+                    <option value=1997>1997</option>
+                    <option value=1998>1998</option>
+                    <option value=1999>1999</option>
+                    <option value=2000>2000</option>
+                    <option value=2001>2001</option>
+                    <option value=2002>2002</option>
+                    <option value=2003>2003</option>
+                    <option value=2004>2004</option>
+                    <option value=2005>2005</option>
+                    <option value=2006>2006</option>
+                    <option value=2007>2007</option>
+                    <option value=2008>2008</option>
+                    <option value=2009>2009</option>
+                    <option value=2010>2010</option>
+                    <option value=2011>2011</option>
+                    <option value=2012>2012</option>
+                    <option value=2013>2013</option>
+                    <option value=2014>2014</option>
+                    <option value=2015>2015</option>
+                    <option value=2016>2016</option>
+                    <option value=2017>2017</option>
+                    <option value=2018>2018</option>
+                    <option value=2019>2019</option>
+                    <option value=2020>2020</option>
+                    <option value=2021>2021</option>
+                    <option value=2022>2022</option>
+                    <option value=2023>2023</option>
+                    <option value=2024>2024</option>
+                    <option value=2025>2025</option>
+                    <option value=2026>2026</option>
+                    <option value=2027>2027</option>
+                    <option value=2028>2028</option>
+                    <option value=2029>2029</option>
+                    <option value=2030>2030</option>
+                </select></form>
+            </div>
+
+            <div class="hospital-setup-form">
+                <h3>Register your hospital</h3>
+                <form class="hospital-setup">
+                        <input type="text" placeholder="Hospital Name" class="hospital-name">
+                        <input type="email" placeholder="Email" class="hospital-email">
+                        <input type="text" placeholder="Physical Address" class="hospital-address">
+                        <input type="text" placeholder="City" class="hospital-city">
+                        <input type="text" placeholder="Province / State" class="hospital-province">
+                        <input type="text" placeholder="Country" class="hospital-country">
+                        <input type="text" placeholder="Postal /Zip Code" class="hospital-code">
+                        <input type="tel" placeholder="Telephone Number" class="hospital-number">
+                    <button class="btn register-hospital-btn" type="submit">Submit form</button>
+                </form>
+            </div>
+
+            <div class="hospital-profile">
+                <h3>Hospital Details</h3>
+
+                <div class="hospital-details">
+                    <div class="row">
+                        <h4>Name:</h4>
+                        <h4 class="hosp-name"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Email:</h4>
+                        <h4 class="hosp-email"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Address:</h4>
+                        <h4 class="hosp-address"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Number:</h4>
+                        <h4 class="hosp-number"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>City:</h4>
+                        <h4 class="hosp-city"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Province:</h4>
+                        <h4 class="hosp-province"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Country:</h4>
+                        <h4 class="hosp-country"></h4>
+                    </div>
+                    <div class="row">
+                        <h4>Zip Code:</h4>
+                        <h4 class="hosp-code"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="all-patients">
+                <h4>All Patients</h4>
+                <ul class="patients-details"></ul>
+            </div>
+
+            <div class="all-doctors">
+                <h4>All Doctors</h4>
+                <ul class="doctors-details"></ul>
+            </div>
+
+            <div class="doctors-info">
+                <div class="header">
+                    <h3> PROFILE </h3>
+                </div>
+                <div class="header-text-and-image-container">
+                    <div class="header-text">
+                        <h4 class="doctors-name"></h4>
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/nurse.jpg" alt="jane doe">
+                    </div>
+                </div>
+
+                <div class="doctor-details">
+                    <div class="key">
+                        <h4>Email Address: </h4>
+                    </div>
+                    <div class="value">
+                        <h4 class="reason-for-visit" id="email"></h4>
+                        <input type="email" class="hidden doctor-email" placeholder="Email Address">
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <div class="key">
+                        <h4>Speciality: </h4>
+                    </div>
+                    <div class="value">
+                        <h4 class="requested-date" id="speciality"></h4>
+                        <input type="text" class="hidden doctor-speciality" placeholder="Speciality">
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <div class="key">
+                        <h4>Cellphone Number: </h4>
+                    </div>
+                    <div class="value">
+                        <h4 class="requested-date" id="cellphone"></h4>
+                        <input type="tel" class="hidden doctor-cellphone" placeholder="Cellphone Number">
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <div class="key">
+                        <h4>Fax Number: </h4>
+                    </div>
+                    <div class="value">
+                        <h4 class="requested-date" id="fax-number"></h4>
+                        <input type="tel" class="hidden doctor-fax-number" placeholder="Fax Number">
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <div class="key">
+                        <h4>Contact Address: </h4>
+                    </div>
+                    <div class="value">
+                        <h4 class="requested-date" id="address"></h4>
+                        <input type="tel" class="hidden doctor-address" placeholder="Contact Address">
+                    </div>
+                </div>
+
+                <div class="profile-options">
+                    <div class="edit-btn-container">
+                        <button class="edit-profile-btn btn">Edit</button>
+                    </div>
+                    <div class="save-btn-container">
+                        <button class="save-profile-btn btn">save</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="doctor-registration">
+                <div class="row1">
+                    <label>
+                        <span>First Name</span>
+                        <input type="text" class="doctor-firstname">
+                    </label>
+                    <label>
+                        <span>Last Name</span>
+                        <input type="text" class="doctor-lastname">
+                    </label>
+                </div>
+                <div class="row2">
+                    <label>
+                        <span>Email Address</span>
+                        <input type="email" class="doctor-email">
+                    </label>
+                    <label>
+                        <span>Cellphone Number</span>
+                        <input type="tel" class="doctor-tel">
+                    </label>
+                </div>
+                <div class="row3">
+                    <label>
+                        <span>Physical Address</span>
+                        <input type="text" class="doctor-address">
+                    </label>
+                    <label>
+                        <span>Blood Group</span>
+                        <input type="text" class="doctor-blood-group">
+                    </label>
+                    <label>
+                        <span>Speciality</span>
+                        <input type="text" class="doctor-speciality">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="daily-duties">
+            <h5>Daily Duties</h5>
+            <div class="duties-input-container">
+                <input type="text" class="task-name" placeholder="Task Name">
+                <input type="text" class="task-description" placeholder="Task Description">
+                <div class="buttons-container">
+                    <button class="btn add-task" type="button">Add Task</button>
+                    <button class="btn save-edited-task" type="button">Save Task</button>
+                </div>
+            </div>
+            <div class="added-tasks">
+                <h3 class="tasklist-heading">Task List</h3>
+                <ul class="tasks"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-pending-appointments-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Pending Appointments</h3>
+                <div class="close-requests-lightbox">X</div>
+            </div>
+            <ul class="requests"></ul>
+        </div>
+    </div>
+
+    <div class="view-individual-appointment-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Appointment</h3>
+                <div class="close-individual-appointment-lightbox">X</div>
+            </div>
+            <ul class="appointments-ul"></ul>
+        </div>
+    </div>
+
+    <div class="view-checkup-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Checkup Details</h3>
+                <div class="close-checkup-lightbox">X</div>
+            </div>
+            <ul class="checkup-details"></ul>
+        </div>
+    </div>
+
+    <div class="view-available-doctors-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Available Doctors</h3>
+                <div class="close-doctors-lightbox">X</div>
+            </div>
+            <ul class="doctors"></ul>
+        </div>
+    </div>
+
+    <div class="view-all-patients-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>All Patients</h3>
+                <div class="close-patients-lightbox">X</div>
+            </div>
+            <ul class="patients"></ul>
+        </div>
+    </div>
+
+    <div class="book-checkup-lightbox">
+        <div class="lightbox-navigation">
+            <div class="lightbox-nav">
+                <h3>Book Checkup</h3>
+                <div class="close-checkup-lightbox">X</div>
+            </div>
+            <label>
+                <span>Reason for visit: </span>
+                <input type="text" class="book-checkup-reason">
+            </label>
+            <br>
+            <label>
+                <span>Please Choose A Date: </span>
+                <input type="date" class="book-checkup-date">
+            </label>
+            <div class="btn-container">
+                <button type="submit" class="btn submit-checkup-btn">Request Appointment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js\doctor-dashboard.js"></script>
+    <script src="js\scripts.js"></script>
+</body>
+</html>
